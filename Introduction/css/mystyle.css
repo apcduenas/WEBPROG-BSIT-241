@@ -1,4 +1,4 @@
-/* Body background */
+
 body {
     background: url("https://images.unsplash.com/photo-1505666287802-931dc83948e0?auto=format&fit=crop&w=1350&q=80");
     background-size: cover;
@@ -9,13 +9,13 @@ body {
 }
 
 
-/* Page title */
+
 h1 {
     color: #ff4444;
     text-shadow: 2px 2px 5px black;
 }
 
-/* Info section boxes */
+
 .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -38,7 +38,7 @@ h1 {
     text-shadow: 1px 1px 3px black;
 }
 
-/* Picture */
+
 .picture img {
     border: 3px solid #ff3333;
     border-radius: 10px;
@@ -46,7 +46,7 @@ h1 {
     box-shadow: 0px 0px 15px #ff000080;
 }
 
-/* Gallery images */
+
 .gallery img {
     border: 3px solid #ff3333;
     border-radius: 10px;
@@ -54,7 +54,7 @@ h1 {
     box-shadow: 0px 0px 15px #ff000090;
 }
 
-/* Gallery title */
+
 .gallery h3, .picture h3 {
     color: #ff4444;
     text-shadow: 1px 1px 3px black;
