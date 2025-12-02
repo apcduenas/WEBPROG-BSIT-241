@@ -1,32 +1,23 @@
 .container {
-
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr;
-
-  background-color: dodgerblue;
-
   padding: 5px;
-
   gap: 5px;
 
+
+  background-color: transparent;
 }
 
 .container div {
-
-  background-color: #aba8a8;
-
+  
+  background-color: rgba(0, 0, 0, 0.6);
   color: #f1f1f1;
-
   padding: 10px;
-
   font-size: 30px;
-
   text-align: center;
-
 }
 
-h1{
-    color: #ff0019; 
+
+h1 {
+  color: #ff0019;
 }
- 
