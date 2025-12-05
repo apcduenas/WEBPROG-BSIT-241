@@ -34,23 +34,48 @@
             font-size: 1.5rem;
             color: #ffa64d;
         }
-        /* Tinanggal ang pangkulay sa About Me section para mas maging malinis at mas madaling basahin */
-        .about-me-section .container-fluid {
-            margin-top: 0 !important;
-        }
-        .about-me-section .row {
-            display: none; /* Tinago ang dating '1 of 2', '1 of 4' na mga box */
+        
+        .about-me-column-item {
+            padding-bottom: 15px; 
         }
     </style>
 </head>
 <body>
 
 <div class="container content-box">
-    <h1 class="text-center">Personal Profile Web Page</h1>
+    <h1 class="text-center mb-4">Personal Profile Web Page</h1>
 
-    <div class="section-title">Picture Gallery</div>
-    <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d10-e0083b1ba367f66b9d8974586fabe49f/views/imgpsh_fullsize" width="300">
+    <h2 class="text-center mb-4">About Me</h2>
+    <div class="row">
+        
+        <div class="col-md-6 about-me-column-item">
+            <div class="section-title">Personal Details</div>
+            <p>Asia Pacific College<br>2nd Year Information Technology Student</p>
+
+            <div class="section-title">IT Experience</div>
+            <p>Basic CSS and still learning</p>
+        </div>
+
+        <div class="col-md-6 about-me-column-item">
+            <div class="section-title">Hobbies & Interests</div>
+            <ul>
+                <li>Playing Basketball</li>
+                <li>Listening to Songs</li>
+            </ul>
+
+            <div class="section-title">Goals in Life / Dream</div>
+            <p>I want to finish my studies and reach my dreams so I can repay my parents for their sacrifices.</p>
+        </div>
+    </div>
 </div>
+
+<div class="container mt-5 content-box">
+    <h2 class="text-center">My Picture</h2>
+    <div class="text-center">
+        <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d10-e0083b1ba367f66b9d8974586fabe49f/views/imgpsh_fullsize" width="300" class="img-fluid rounded" />
+    </div>
+</div>
+
 
 <div class="container mt-5 content-box">
     <h2 class="text-center">Picture Gallery</h2>
@@ -67,29 +92,6 @@
     </div>
 </div>
 
-<div class="container mt-5 content-box about-me-section">
-    <h2 class="text-center">About Me</h2>
-
-    <div class="section-title">Personal Details</div>
-    <p>Asia Pacific College<br>2nd Year Information Technology Student</p>
-
-    <div class="section-title">IT Experience</div>
-    <p>Basic CSS and still learning</p>
-
-    <div class="section-title">Hobbies & Interests</div>
-    <ul>
-        <li>Playing Basketball</li>
-        <li>Listening to Songs</li>
-    </ul>
-
-    <div class="section-title">Goals in Life / Dream</div>
-    <p>I want to finish my studies and reach my dreams so I can repay my parents for their sacrifices.</p>
-
-    <div class="container-fluid">
-        <div class="row text-center">
-             </div>
-    </div>
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
