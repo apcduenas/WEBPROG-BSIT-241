@@ -61,6 +61,56 @@
     <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d10-e0083b1ba367f66b9d8974586fabe49f/views/imgpsh_fullsize" alt="Profile Picture">
   </section>
 
+  <section id="guestbook">
+  <h2>Visitor Guestbook</h2>
+  <p>Leave a comment and mark your favorites!</p>
+
+  <form v-on:submit.prevent="addEntry">
+    <p>
+      Your Name: <br>
+      <input type="text" required placeholder="Name.." v-model="visitorName">
+    </p>
+    <p>
+      Your Feedback/Comment: <br>
+      <textarea required placeholder="Write something.." v-model="visitorComment"></textarea>
+    </p>
+    <p>
+      Mark as Public?
+      <label>
+        <input type="checkbox" v-model="isPublic">
+        {{ isPublic }}
+      </label>
+    </p>
+    <button type="submit">Post Comment</button>
+  </form>
+
+  <hr>
+
+  <div>
+    <p><strong>Recent Comments (Click to "Like"):</strong></p>
+    <ul id="ulToFind">
+      <li 
+        v-for="entry in guestbookEntries" 
+        v-bind:class="{ impClass: entry.public }"
+        v-on:click="entry.liked=!entry.liked"
+        v-show="!entry.liked">
+          <strong>{{ entry.name }}</strong>: "{{ entry.comment }}"
+      </li>
+    </ul>
+
+    <p><strong>Liked Comments:</strong></p>
+    <ul id="ulFound">
+      <li 
+        v-for="entry in guestbookEntries" 
+        v-bind:class="{ impClass: entry.public }"
+        v-on:click="entry.liked=!entry.liked"
+        v-show="entry.liked">
+          ❤️ <strong>{{ entry.name }}</strong>: "{{ entry.comment }}"
+      </li>
+    </ul>
+  </div>
+</section>
+
   <footer>
     <p>© 2026 ANTHONY DUENAS | WEBPROG IT-241</p>
   </footer>

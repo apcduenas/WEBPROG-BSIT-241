@@ -154,3 +154,44 @@ footer {
   section { margin: 20px; }
 }
 
+/* GUESTBOOK STYLING */
+#guestbook input, #guestbook textarea {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  border: 1px solid var(--fire-orange);
+  color: white;
+  margin-bottom: 10px;
+}
+
+#guestbook ul {
+  list-style: none;
+  padding: 0;
+}
+
+#guestbook li {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #222;
+  border-radius: 5px;
+  cursor: pointer;
+  border-left: 4px solid var(--fire-orange);
+  transition: 0.3s;
+}
+
+#guestbook li:hover {
+  background-color: #333;
+}
+
+/* "Important" or Public class from your example */
+.impClass {
+  border-left-color: var(--fire-yellow) !important;
+}
+
+/* "Found" or Liked items logic from your example */
+#ulFound li {
+  text-decoration: none; /* Removed line-through for comments */
+  opacity: 0.8;
+  background-color: #1a1a1a;
+  border-left-color: #555;
+}
