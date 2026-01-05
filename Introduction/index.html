@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Personal Profile | WEBPROG</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <p class="hero-tag">welcome to my personal website // information technology</p>
-    <h1 class="hero-name">RANIEL</h1>
-    <h2 class="hero-outline">DELA CRUZ</h2>
-    <a href="#about" class="hero-btn">Explore Profile</a>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#goals">Goals</a>
+    <a href="#gallery">Gallery</a>
+    <a href="resources.html">Resources</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Personal Profile Website</h1>
+    <p>WEBPROG IT-241</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a second-year Information Technology student at Asia Pacific College.
+      I am interested in web development and continuously improving my technical skills.
+    </p>
   </section>
 
-  <!-- CONTENT GRID -->
-  <main class="grid">
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education / Achievements</h2>
+    <p>
+      Asia Pacific College<br>
+      Bachelor of Science in Information Technology<br>
+      Second Year Student
+    </p>
+  </section>
 
-    <section class="card" id="about">
-      <span class="card-tag">01 // Biography</span>
-      <h3>About Me</h3>
-      <p>
-        I am a second-year Information Technology student at Asia Pacific College
-        with a strong interest in web development and modern technologies.
-      </p>
-    </section>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>IT Experience</h2>
+    <p>
+      I have basic knowledge of HTML and CSS and I am still learning more about
+      JavaScript and modern web technologies.
+    </p>
+  </section>
 
-    <section class="card">
-      <span class="card-tag">02 // Degree</span>
-      <h3>Course</h3>
-      <p>
-        BS in Information Technology<br>
-        Asia Pacific College
-      </p>
-    </section>
+  <!-- HOBBIES -->
+  <section id="hobbies">
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li>Playing basketball</li>
+      <li>Listening to music</li>
+    </ul>
+  </section>
 
-    <section class="card">
-      <span class="card-tag">03 // Vision</span>
-      <h3>Goals in Life & Dreams</h3>
-      <p>
-        My goal is to become successful and financially stable so I can help my
-        parents and give back for their sacrifices.
-      </p>
-    </section>
+  <!-- GOALS -->
+  <section id="goals">
+    <h2>Goals in Life / Dream</h2>
+    <p>
+      My goal is to finish my studies and reach my dreams so I can repay my parents
+      for their sacrifices.
+    </p>
+    <button id="motivateBtn">Click for Motivation</button>
+  </section>
 
-    <section class="card">
-      <span class="card-tag">04 // Academic</span>
-      <h3>Education & Achievements</h3>
-      <ul>
-        <li>Asia Pacific College (Current)</li>
-        <li>2nd Year BSIT Student</li>
-        <li>Specialized in Web Programming</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <span class="card-tag">05 // Expertise</span>
-      <h3>IT Experience</h3>
-      <ul>
-        <li>HTML & CSS</li>
-        <li>Basic JavaScript</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <span class="card-tag">06 // Interests</span>
-      <h3>Hobbies & Interests</h3>
-      <ul>
-        <li>Basketball</li>
-        <li>Listening to music</li>
-        <li>Reading tech articles</li>
-      </ul>
-    </section>
-
-  </main>
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Picture Gallery</h2>
+    <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d10-e0083b1ba367f66b9d8974586fabe49f/views/imgpsh_fullsize"
+         alt="Profile Picture">
+  </section>
 
   <footer>
     <p>© 2026 Personal Profile Website</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

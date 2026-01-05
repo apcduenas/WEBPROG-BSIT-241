@@ -1,148 +1,90 @@
-/* ===============================
-   GHOST RIDER THEME VARIABLES
-================================ */
 :root {
-  --bg: #050505;
-  --card-bg: #0e0e0e;
-  --primary: #00f0ff;
-  --secondary: #ff6a00;
-  --text: #eaeaea;
-  --muted: #9aa4b2;
-  --border: rgba(255, 255, 255, 0.1);
-}
-
-/* ===============================
-   GLOBAL
-================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --primary: #0d47a1;
+  --accent: #1976d2;
+  --bg: #f4f6f8;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg);
   line-height: 1.6;
 }
 
-/* ===============================
-   HERO SECTION
-================================ */
-.hero {
-  min-height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px;
-  background:
-    radial-gradient(circle at top, rgba(0,240,255,0.15), transparent 60%),
-    linear-gradient(to bottom, #050505, #000);
-}
-
-.hero-tag {
-  color: var(--primary);
-  letter-spacing: 3px;
-  font-size: 12px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.hero-name {
-  font-size: clamp(60px, 9vw, 110px);
-  font-weight: 800;
-}
-
-.hero-outline {
-  font-size: clamp(48px, 8vw, 90px);
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--primary);
-}
-
-.hero-btn {
-  margin-top: 40px;
-  display: inline-block;
-  padding: 14px 36px;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 30px;
-  transition: 0.3s ease;
-}
-
-.hero-btn:hover {
+/* NAVIGATION */
+nav {
   background: var(--primary);
-  color: #000;
-  box-shadow: 0 0 25px rgba(0,240,255,0.6);
+  padding: 10px;
+  text-align: center;
 }
 
-/* ===============================
-   GRID LAYOUT
-================================ */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 60px;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
 }
 
-/* ===============================
-   CARDS
-================================ */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+nav a:hover {
+  text-decoration: underline;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(255, 106, 0, 0.15);
+/* HEADER */
+header {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
 }
 
-.card-tag {
+/* SECTIONS */
+section {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
   color: var(--primary);
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
-.card h3 {
-  margin: 15px 0 10px;
+/* IMAGE */
+img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-.card p,
-.card li {
-  color: var(--muted);
-  font-size: 14px;
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.card ul {
-  margin-left: 18px;
+button:hover {
+  background: #08306b;
 }
 
-/* ===============================
-   FOOTER
-================================ */
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
+  padding: 15px;
+  background: var(--primary);
+  color: white;
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .grid {
-    padding: 30px 20px;
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  section {
+    margin: 10px;
   }
 }
