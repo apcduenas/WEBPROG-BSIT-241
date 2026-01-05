@@ -11,8 +11,98 @@ body {
   line-height: 1.6;
 }
 
-/* NAVIGATION */
+
+nav {:root {
+  --primary: #0d47a1;
+  --accent: #1976d2;
+  --bg: #f4f6f8;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+
 nav {
+  background: var(--primary);
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+header {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+
+section {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  color: var(--primary);
+}
+
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+button {
+  padding: 10px 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #08306b;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  section {
+    margin: 10px;
+  }
+}
+
   background: var(--primary);
   padding: 10px;
   text-align: center;
@@ -116,9 +206,5 @@ a:hover {
 
 a:active {
   color: #0b3c91;
-}
-
-section {
-  border: 1px solid var(--border);
 }
 
