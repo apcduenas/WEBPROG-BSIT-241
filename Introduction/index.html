@@ -1,70 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Personal Profile | ANTHONY DUENAS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+const { createApp } = Vue;
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#hobbies">Hobbies</a>
-    <a href="#goals">Goals</a>
-    <a href="#gallery">Gallery</a>
-    <a href="resources.html">Resources</a>
-  </nav>
+const app = createApp({
+  data() {
+    return {
+      // MIDTERM IMAGES
+      midtermGallery: [
+        { name: 'FRIENDS NATURE TRIP', url: 'https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-jhb-d10-1bbf8c277d6e703d4a5c49dacc706b92/views/imgpsh_fullsize' },
+        { name: 'HAPPINESS', url: 'https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-jhb-d11-ef642591a7f2e70a81c284a42bb698df/views/imgpsh_fullsize' },
+        { name: 'Old picture me and my Dad', url: 'https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d11-ff2328403abc0a4c7dfb036ab530333a/views/imgpsh_fullsize' },
+        { name: 'My first trip to Bicol', url: 'https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d9-4ed8661b2f7b3daf2655b71f43bc72d3/views/imgpsh_fullsize' }
+      ],
 
-  <header>
-    <div class="hero-sub">WELCOME TO MY PERSONAL WEBSITE</div>
-    <div class="hero-name-solid">ANTHONY</div>
-    <div class="hero-name-outline">DUENAS</div>
-    <div class="hero-action">
-      <a href="#about" class="explore-btn">EXPLORE PROFILE</a>
-    </div>
-  </header>
+      // SKILLS LIST (Shopping List Logic)
+      newItemName: '',
+      skillsList: [
+        { name: 'HTML5', found: true },
+        { name: 'CSS3', found: true },
+        { name: 'JavaScript', found: false },
+        { name: 'Vue.js', found: false }
+      ]
+    }
+  },
+  methods: {
+    addSkill() {
+      if (this.newItemName.trim() !== '') {
+        this.skillsList.push({ name: this.newItemName, found: false });
+        this.newItemName = '';
+      }
+    },
+    triggerMotivation() {
+      alert("Keep pushing forward and never give up on your dreams!");
+      document.body.style.backgroundColor = "#ff6a00";
+      setTimeout(() => {
+        document.body.style.backgroundColor = "#0a0a0a";
+      }, 200);
+    },
+    handleScroll() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.7 && rect.bottom >= 0) {
+          section.style.borderLeftColor = "#ffcc00"; 
+        } else {
+          section.style.borderLeftColor = "#e62117"; 
+        }
+      });
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+});
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a second-year Information Technology student at Asia Pacific College. I am interested in web development and continuously improving my technical skills.</p>
-  </section>
-
-  <section id="education">
-    <h2>Education / Achievements</h2>
-    <p>Asia Pacific College<br>Bachelor of Science in Information Technology<br>Second Year Student</p>
-  </section>
-
-  <section id="experience">
-    <h2>IT Experience</h2>
-    <p>I have basic knowledge of HTML and CSS and I am still learning more about JavaScript and modern web technologies.</p>
-  </section>
-
-  <section id="hobbies">
-    <h2>Hobbies & Interests</h2>
-    <ul>
-      <li>Playing basketball</li>
-      <li>Listening to music</li>
-    </ul>
-  </section>
-
-  <section id="goals">
-    <h2>Goals in Life / Dream</h2>
-    <p>My goal is to finish my studies and reach my dreams so I can repay my parents for their sacrifices.</p>
-    <button id="motivateBtn">Click for Motivation</button>
-  </section>
-
-  <section id="gallery">
-    <h2>Picture Gallery</h2>
-    <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d10-e0083b1ba367f66b9d8974586fabe49f/views/imgpsh_fullsize" alt="Profile Picture">
-  </section>
-
-  <footer>
-    <p>© 2026 ANTHONY DUENAS | WEBPROG IT-241</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+app.mount('#app');
