@@ -1,44 +1,108 @@
-<section id="gallery">
-  <h2>Picture Gallery</h2>
-  <div class="gallery-grid">
-    <figure v-for="pic in midtermGallery" :key="pic.name" class="gallery-item">
-      <img :src="pic.url" :alt="pic.name">
-      <figcaption>{{ pic.name }}</figcaption>
-    </figure>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Profile | ANTHONY DUENAS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body id="app">
 
-<section id="skills">
-  <h2>IT Skills Checklist</h2>
-  <p>Mark the skills I have mastered (Click to move to 'Mastered'):</p>
-  
-  <div class="skill-input">
-    <input type="text" v-model="newItemName" placeholder="Add new skill..." @keyup.enter="addSkill">
-    <button @click="addSkill">Add</button>
-  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#goals">Goals</a>
+    <a href="#gallery">Gallery</a>
+    <a href="resources.html">Resources</a>
+  </nav>
 
-  <div class="skills-container">
-    <div>
-      <p><strong>Learning in Progress:</strong></p>
-      <ul>
-        <li v-for="skill in skillsList" 
-            v-show="!skill.found" 
-            @click="skill.found = !skill.found"
-            :class="{ 'impClass': skill.important }">
-          {{ skill.name }}
-        </li>
-      </ul>
+  <header>
+    <div class="hero-sub">WELCOME TO MY PERSONAL WEBSITE</div>
+    <div class="hero-name-solid">ANTHONY</div>
+    <div class="hero-name-outline">DUENAS</div>
+    <div class="hero-action">
+      <a href="#about" class="explore-btn">EXPLORE PROFILE</a>
     </div>
+  </header>
 
-    <div>
-      <p><strong>Mastered Skills:</strong></p>
-      <ul class="mastered">
-        <li v-for="skill in skillsList" 
-            v-show="skill.found" 
-            @click="skill.found = !skill.found">
-          {{ skill.name }} ✓
-        </li>
-      </ul>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a second-year Information Technology student at Asia Pacific College. I am interested in web development and continuously improving my technical skills.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education / Achievements</h2>
+    <p>Asia Pacific College<br>Bachelor of Science in Information Technology<br>Second Year Student</p>
+  </section>
+
+  <section id="experience">
+    <h2>IT Experience</h2>
+    <p>I have basic knowledge of HTML and CSS and I am still learning more about JavaScript and modern web technologies.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Picture Gallery</h2>
+    <div class="gallery-container-fixed">
+      <figure v-for="x in midtermGallery" :key="x.name">
+        <img v-bind:src="x.url">
+        <figcaption>{{ x.name }}</figcaption>
+      </figure>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="skills">
+    <h2>IT Skills Checklist</h2>
+    <p>Mark the skills I have mastered (Click to move to 'Mastered'):</p>
+    <div class="skill-input">
+      <input type="text" v-model="newItemName" placeholder="Add new skill..." @keyup.enter="addSkill">
+      <button @click="addSkill">Add</button>
+    </div>
+    <div class="skills-container">
+      <div>
+        <p><strong>Learning in Progress:</strong></p>
+        <ul>
+          <li v-for="skill in skillsList" 
+              v-show="!skill.found" 
+              @click="skill.found = !skill.found"
+              :class="{ 'impClass': skill.important }">
+            {{ skill.name }}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Mastered Skills:</strong></p>
+        <ul class="mastered">
+          <li v-for="skill in skillsList" 
+              v-show="skill.found" 
+              @click="skill.found = !skill.found">
+            {{ skill.name }} ✓
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies">
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li>Playing basketball</li>
+      <li>Listening to music</li>
+    </ul>
+  </section>
+
+  <section id="goals">
+    <h2>Goals in Life / Dream</h2>
+    <p>My goal is to finish my studies and reach my dreams so I can repay my parents for their sacrifices.</p>
+    <button @click="triggerMotivation" id="motivateBtn">Click for Motivation</button>
+  </section>
+
+  <footer>
+    <p>© 2026 ANTHONY DUENAS | WEBPROG IT-241</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
