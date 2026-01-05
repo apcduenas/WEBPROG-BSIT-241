@@ -5,9 +5,8 @@
   <title>Personal Profile | ANTHONY DUENAS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body id="app">
+<body>
 
   <nav>
     <a href="#about">About</a>
@@ -43,48 +42,6 @@
     <p>I have basic knowledge of HTML and CSS and I am still learning more about JavaScript and modern web technologies.</p>
   </section>
 
-  <section id="gallery">
-    <h2>Picture Gallery</h2>
-    <div class="gallery-container-fixed">
-      <figure v-for="x in midtermGallery" :key="x.name">
-        <img v-bind:src="x.url">
-        <figcaption>{{ x.name }}</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>IT Skills Checklist</h2>
-    <p>Mark the skills I have mastered (Click to move to 'Mastered'):</p>
-    <div class="skill-input">
-      <input type="text" v-model="newItemName" placeholder="Add new skill..." @keyup.enter="addSkill">
-      <button @click="addSkill">Add</button>
-    </div>
-    <div class="skills-container">
-      <div>
-        <p><strong>Learning in Progress:</strong></p>
-        <ul>
-          <li v-for="skill in skillsList" 
-              v-show="!skill.found" 
-              @click="skill.found = !skill.found"
-              :class="{ 'impClass': skill.important }">
-            {{ skill.name }}
-          </li>
-        </ul>
-      </div>
-      <div>
-        <p><strong>Mastered Skills:</strong></p>
-        <ul class="mastered">
-          <li v-for="skill in skillsList" 
-              v-show="skill.found" 
-              @click="skill.found = !skill.found">
-            {{ skill.name }} ✓
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <section id="hobbies">
     <h2>Hobbies & Interests</h2>
     <ul>
@@ -96,7 +53,12 @@
   <section id="goals">
     <h2>Goals in Life / Dream</h2>
     <p>My goal is to finish my studies and reach my dreams so I can repay my parents for their sacrifices.</p>
-    <button @click="triggerMotivation" id="motivateBtn">Click for Motivation</button>
+    <button id="motivateBtn">Click for Motivation</button>
+  </section>
+
+  <section id="gallery">
+    <h2>Picture Gallery</h2>
+    <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/9f8d3607-32c4-4e7f-a4db-9861ebf737cc/objects/0-ea-d10-e0083b1ba367f66b9d8974586fabe49f/views/imgpsh_fullsize" alt="Profile Picture">
   </section>
 
   <footer>
@@ -105,4 +67,47 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+</html><section id="gallery">
+  <h2>Picture Gallery</h2>
+  <div class="gallery-grid">
+    <figure v-for="pic in midtermGallery" :key="pic.name" class="gallery-item">
+      <img :src="pic.url" :alt="pic.name">
+      <figcaption>{{ pic.name }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>IT Skills Checklist</h2>
+  <p>Mark the skills I have mastered (Click to move to 'Mastered'):</p>
+  
+  <div class="skill-input">
+    <input type="text" v-model="newItemName" placeholder="Add new skill..." @keyup.enter="addSkill">
+    <button @click="addSkill">Add</button>
+  </div>
+
+  <div class="skills-container">
+    <div>
+      <p><strong>Learning in Progress:</strong></p>
+      <ul>
+        <li v-for="skill in skillsList" 
+            v-show="!skill.found" 
+            @click="skill.found = !skill.found"
+            :class="{ 'impClass': skill.important }">
+          {{ skill.name }}
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p><strong>Mastered Skills:</strong></p>
+      <ul class="mastered">
+        <li v-for="skill in skillsList" 
+            v-show="skill.found" 
+            @click="skill.found = !skill.found">
+          {{ skill.name }} ✓
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
