@@ -2,119 +2,154 @@
   --fire-red: #e62117;
   --fire-orange: #ff6a00;
   --fire-yellow: #ffcc00;
-  --charcoal: #121212;
-  --smoke: #2a2a2a;
-  --text-light: #f0f0f0;
+  --charcoal: #0a0a0a;
+  --smoke: #1a1a1a;
+  --text-white: #ffffff;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Arial Black', Gadget, sans-serif;
   margin: 0;
   background-color: var(--charcoal);
-  background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
-  color: var(--text-light);
-  line-height: 1.6;
+  color: var(--text-white);
+  scroll-behavior: smooth;
 }
 
-/* NAVIGATION - Smoky & Hovering */
+/* NAVIGATION */
 nav {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   padding: 15px;
   text-align: center;
-  border-bottom: 2px solid var(--fire-red);
+  border-bottom: 1px solid var(--fire-orange);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 nav a {
   color: var(--fire-orange);
   text-decoration: none;
   margin: 0 15px;
+  font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: var(--fire-yellow);
+  color: var(--text-white);
   text-shadow: 0 0 10px var(--fire-orange);
 }
 
-/* HEADER - The Burning Skull Look */
+/* HERO HEADER (Based on classmate image) */
 header {
-  background: linear-gradient(180deg, #000 0%, var(--fire-red) 100%);
-  color: white;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
   text-align: center;
-  padding: 60px 10px;
-  border-bottom: 5px solid var(--fire-yellow);
-  text-shadow: 3px 3px 5px #000;
+  border-bottom: 4px solid var(--fire-red);
 }
 
-header h1 {
-  font-size: 3rem;
-  margin: 0;
-  letter-spacing: 4px;
+.hero-sub {
+  color: var(--fire-orange);
+  font-size: 0.9rem;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-/* SECTIONS - Charred Paper Effect */
+.hero-name-solid {
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  line-height: 1;
+}
+
+.hero-name-outline {
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--fire-orange);
+  line-height: 1;
+  margin-bottom: 40px;
+}
+
+.explore-btn {
+  padding: 15px 40px;
+  border: 1px solid var(--fire-orange);
+  color: var(--fire-orange);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  background: var(--fire-orange);
+  color: black;
+  box-shadow: 0 0 20px var(--fire-orange);
+}
+
+/* SECTIONS */
 section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
   background: var(--smoke);
-  margin: 30px auto;
-  max-width: 800px;
-  padding: 30px;
-  border-left: 5px solid var(--fire-red);
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: transform 0.3s;
-}
-
-section:hover {
-  transform: scale(1.02);
-  border-left-color: var(--fire-yellow);
+  border-left: 2px solid var(--fire-red);
 }
 
 h2 {
-  color: var(--fire-orange);
+  color: var(--fire-yellow);
   text-transform: uppercase;
-  border-bottom: 1px solid var(--smoke);
-  padding-bottom: 10px;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
 }
 
-/* IMAGE - Hellfire Border */
+/* IMAGE */
 img {
-  max-width: 100%;
-  border: 4px solid var(--fire-red);
-  filter: grayscale(30%) contrast(120%);
-  box-shadow: 0 0 20px var(--fire-red);
+  width: 100%;
+  max-width: 500px;
+  border: 5px solid var(--fire-red);
+  filter: grayscale(100%);
+  transition: 0.5s;
 }
 
-/* BUTTON - Igniting on Hover */
+img:hover {
+  filter: grayscale(0%);
+  box-shadow: 0 0 30px var(--fire-red);
+}
+
+/* BUTTON */
 button {
-  padding: 12px 25px;
-  background: linear-gradient(45deg, var(--fire-red), var(--fire-orange));
+  background: var(--fire-red);
   color: white;
   border: none;
+  padding: 15px 30px;
   font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 0; /* Sharp edges */
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 4px 0 #8b0000;
+  text-transform: uppercase;
 }
 
 button:hover {
   background: var(--fire-yellow);
   color: black;
-  box-shadow: 0 0 20px var(--fire-yellow);
 }
 
-/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
-  background: black;
-  color: var(--smoke);
-  border-top: 1px solid var(--smoke);
+  padding: 50px;
+  font-size: 0.7rem;
+  color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-name-solid, .hero-name-outline { font-size: 3rem; }
+  section { margin: 20px; }
 }
