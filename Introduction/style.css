@@ -1,46 +1,107 @@
-/* =========================
-   COLOR VARIABLES
-   ========================= */
 :root {
   --primary: #0d47a1;
   --accent: #1976d2;
-  --background: #f4f6f8;
-  --text: #333333;
-  --border: #cccccc;
+  --bg: #f4f6f8;
 }
 
-/* =========================
-   GLOBAL STYLES
-   ========================= */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--background);
-  color: var(--text);
+  margin: 0;
+  background-color: var(--bg);
+  line-height: 1.6;
 }
 
-/* =========================
-   HEADER & NAVIGATION
-   ========================= */
-header {
-  background-color: var(--primary);
-  color: white;
-  padding: 15px;
+/* NAVIGATION */
+nav {
+  background: var(--primary);
+  padding: 10px;
+  text-align: center;
 }
 
 nav a {
   color: white;
-  margin-right: 15px;
   text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
 }
 
 nav a:hover {
-  color: #bbdefb;
+  text-decoration: underline;
 }
 
-/* =========================
-   LINKS (RUBRIC REQUIRED)
-   ========================= */
+/* HEADER */
+header {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+/* SECTIONS */
+section {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  color: var(--primary);
+}
+
+/* IMAGE */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #08306b;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  section {
+    margin: 10px;
+  }
+}
+
+:root {
+  --primary: #0d47a1;      
+  --accent: #1976d2;       
+  --background: #f4f6f8;   
+  --text: #333333;         
+  --border: #cccccc;       
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
 a {
   color: var(--accent);
 }
@@ -57,47 +118,7 @@ a:active {
   color: #0b3c91;
 }
 
-/* =========================
-   SECTIONS & BORDERS
-   ========================= */
 section {
-  background-color: white;
-  margin: 15px;
-  padding: 15px;
   border: 1px solid var(--border);
-  border-radius: 5px;
 }
 
-/* =========================
-   TABLE STYLES (RUBRIC REQUIRED)
-   ========================= */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid var(--border);
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: var(--primary);
-  color: white;
-}
-
-tr:nth-child(even) {
-  background-color: #e3f2fd;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-footer {
-  background-color: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
