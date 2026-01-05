@@ -153,3 +153,29 @@ footer {
   .hero-name-solid, .hero-name-outline { font-size: 3rem; }
   section { margin: 20px; }
 }
+
+/* Skills List Styling */
+#skills ul { list-style: none; padding: 0; }
+#skills li {
+  background: #222;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border-left: 3px solid var(--fire-orange);
+  transition: 0.2s;
+}
+#skills li:hover { background: #333; }
+.impClass { color: var(--fire-yellow); font-weight: bold; }
+.mastered li { 
+  text-decoration: line-through; 
+  opacity: 0.6; 
+  border-left-color: #555 !important; 
+}
+.skill-input input {
+  padding: 10px;
+  background: #000;
+  border: 1px solid var(--fire-red);
+  color: white;
+  width: 70%;
+}
